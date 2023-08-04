@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { useAuth } from '../context/AuthContext'
 
 export default function Login() {
@@ -6,15 +6,16 @@ export default function Login() {
     const [password, setPassword] = useState('')
     const [error, setError] = useState(null)
     const [isLoggingIn, setIsLoggingIn] = useState(true)
+    const [isLoading, setIsLoading] = useState(false) 
     
-    const { login, signup, currentUser } = useAuth()
-    console.log(currentUser)
+    const { login, signup } = useAuth()
     
     async function loginHandler() {
         if (!email || !password) {
             setError('Please enter email and password')
             return
         }
+        
         if (isLoggingIn){
             try{
                 await login(email, password)
@@ -22,8 +23,9 @@ export default function Login() {
                 setError('Incorrect email or password')
             }
             return
+        } else {
+            await signup(email, password)
         }
-        await signup(email, password)
     }
 
     return(
