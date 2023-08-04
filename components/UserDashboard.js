@@ -19,34 +19,34 @@ function UserDashboard() {
   }
 
   return (
-    <div className='flex flex-col items-center'>
-      <div className='flex gap-2'>
+    <div className='fixed w-screen flex flex-col p-2'>
+      <div className='flex items-center justify-around text-lg sm:text-xl'>
         <button
-          className={`px-4 py-2 rounded-lg font-bold focus:outline-none ${activeTab === 'ECC' ? 'bg-blue-500 text-white' : 'bg-gray-200'}`}
+          className={`px-4 py-2 flex-grow font-bold focus:outline-none hover:text-3xl transition-all ${activeTab === 'ECC' ? 'bg-darkBG text-lightBG text-4xl rounded-lg' : 'bg-lightBG'}`}
           onClick={() => handleTabChange('ECC')}
         >
           ECC
         </button>
         <button
-          className={`px-4 py-2 rounded-lg font-bold focus:outline-none ${activeTab === 'PTO' ? 'bg-blue-500 text-white' : 'bg-gray-200'}`}
+          className={`px-4 py-2 flex-grow font-bold focus:outline-none hover:text-3xl transition-all ${activeTab === 'PTO' ? 'bg-darkBG text-lightBG text-4xl rounded-lg' : 'bg-lightBG'}`}
           onClick={() => handleTabChange('PTO')}
         >
           PTO
         </button>
         <button
-          className={`px-4 py-2 rounded-lg font-bold focus:outline-none ${activeTab === 'DP' ? 'bg-blue-500 text-white' : 'bg-gray-200'}`}
+          className={`px-4 py-2 flex-grow font-bold focus:outline-none hover:text-3xl transition-all ${activeTab === 'DP' ? 'bg-darkBG text-lightBG text-4xl rounded-lg' : 'bg-lightBG'}`}
           onClick={() => handleTabChange('DP')}
         >
           DP
         </button>
         <button
-          className={`px-4 py-2 rounded-lg font-bold focus:outline-none ${activeTab === 'SMR' ? 'bg-blue-500 text-white' : 'bg-gray-200'}`}
+          className={`px-4 py-2 flex-grow font-bold focus:outline-none hover:text-3xl transition-all ${activeTab === 'SMR' ? 'bg-darkBG text-lightBG text-4xl rounded-lg' : 'bg-lightBG'}`}
           onClick={() => handleTabChange('SMR')}
         >
           SMR
         </button>
         <button
-          className={`px-4 py-2 rounded-lg font-bold focus:outline-none ${activeTab === 'CMR' ? 'bg-blue-500 text-white' : 'bg-gray-200'}`}
+          className={`px-4 py-2 flex-grow font-bold focus:outline-none hover:text-3xl transition-all ${activeTab === 'CMR' ? 'bg-darkBG text-lightBG text-4xl rounded-lg' : 'bg-lightBG'}`}
           onClick={() => handleTabChange('CMR')}
         >
           CMR
@@ -58,7 +58,7 @@ function UserDashboard() {
         <div>
           <h3 className='font-semibold text-lg'>Environmental Compliance Certificate</h3>
           <p>Date Issued: {formatDate(data.ECC['Date Issued'])}</p>
-          <p>ECC No.: {data.ECC['ECC No. ']}</p>
+          <p>ECC No.: {data.ECC['ECC No.']}</p>
           <p>Status: {data.ECC.Status}</p>
         </div>
       )}
