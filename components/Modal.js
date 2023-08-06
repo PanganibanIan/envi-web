@@ -5,7 +5,7 @@ import ReactDom from 'react-dom'
 function Modal(props) {
     const { setOpenModal } = props
     const [ _document, set_document] = useState(null)
-    const {logout} = useAuth()
+    const {logout, currentUser} = useAuth()
 
     useEffect(() => {
         set_document(document)
@@ -20,13 +20,15 @@ function Modal(props) {
                 <i onClick={() => setOpenModal(false)} class="fa-solid fa-xmark duration-300 hover:rotate-90 cursor-pointer text-lg sm:text-3xl"></i>
             </div>
             <div className='p-4 flex flex-col gap-3'>
-                <h2 onClick={()=>{
-                    logout()
-                    setOpenModal(false)
-                }} className='select-none duration-300 hover:pl-2 cursor-pointer inline-block'>Logout</h2>
-                
                 <a className='select-none duration-300 hover:pl-2 cursor-pointer inline-block' href="https://opms.emb.gov.ph/accounts/login/">EMB Online Permitting and Monitoring System</a>
                 <a className='select-none duration-300 hover:pl-2 cursor-pointer inline-block' href="https://emb.gov.ph/">DENR EMB</a>
+                
+                {currentUser && (
+                    <h2 onClick={() => {
+                        logout();
+                        setOpenModal(false);
+                    }} className='select-none duration-300 hover:pl-2 cursor-pointer inline-block'>Logout</h2>
+                )}
             </div>
         </div>,
         _document.getElementById('portal')
