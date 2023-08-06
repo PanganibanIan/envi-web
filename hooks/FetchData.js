@@ -16,41 +16,33 @@ const FetchData = () => {
     if (!docSnap.exists()) {
       const templateData = {
         ECC: {
-          'Date Issued': null,
+          'Date Issued': '',
           'ECC No.': '',
           Status: '',
         },
         PTO: {
-          'Date Issued': null,
-          'Expiry Date': null,
+          'Date Issued': '',
+          'Expiry Date': '',
           'Permit No.': '',
           Status: '',
         },
         DP: {
-          'Date Issued': null,
-          'Expiry Date': null,
+          'Date Issued': '',
+          'Expiry Date': '',
           'Permit No.': '',
           Status: '',
         },
         SMR: {
-          'Next Monitoring Period': {
-            Date: null,
-            Status: '',
-          },
-          'Prev Monitoring Period': {
-            Date: null,
-            Status: '',
-          },
+          'Next Monitoring Period - Date': '',
+          'Next Monitoring Period - Status': '',
+          'Prev Monitoring Period - Date': '',
+          'Prev Monitoring Period - Status': '',
         },
         CMR: {
-          'Next Monitoring Period': {
-            Date: null,
-            Status: '',
-          },
-          'Prev Monitoring Period': {
-            Date: null,
-            Status: '',
-          },
+          'Next Monitoring Period - Date': '',
+          'Next Monitoring Period - Status': '',
+          'Prev Monitoring Period - Date': '',
+          'Prev Monitoring Period - Status': '',
         },
       };
 
@@ -81,7 +73,7 @@ const FetchData = () => {
 }, [])
 
 
-  return {data, loading}
+  return {data, setData, loading}
 
 };
 
