@@ -36,8 +36,17 @@ function handleAddEdit(dataKey) {
   return () => {
       setEdit(dataKey)
       setEdittedValue(data[activeTab][dataKey])
+      console.log(edittedValue)
   }
 }
+
+const isDateOneWeekAway = (dateString) => {
+  const oneWeekInMillis = 7 * 24 * 60 * 60 * 1000;
+  const currentDate = new Date();
+  const targetDate = new Date(dateString);
+  return targetDate - currentDate <= oneWeekInMillis;
+}
+
 
   return (
     <div className='fixed w-screen flex flex-col p-2'>
@@ -74,9 +83,9 @@ function handleAddEdit(dataKey) {
         </button>
       </div>
       
-      {(loading) && (<div className='flex-1 grid place-items-center'><i class="fa-solid fa-spinner fa-spin-pulse text-6xl"></i></div>)}
+      {(loading) && (<div className='flex-1 grid place-items-center'><i className="fa-solid fa-spinner fa-spin-pulse text-6xl"></i></div>)}
       {(!loading) && (
-       <div className='flex-1 flex flex-col justify-center items-center gap-2 sm:gap-4 text-lg sm:text-2xl p-10'>
+       <div className='flex-1 flex flex-col justify-center items-center gap-2 sm:gap-4 text-md sm:text-2xl p-10'>
        {activeTab === 'ECC' && (
        <>
        <h3 className='font-semibold text-xl sm:text-3xl'>Environmental Compliance Certificate</h3>
@@ -162,7 +171,7 @@ function handleAddEdit(dataKey) {
             setEdittedValue={setEdittedValue}
             handleEditData={handleEditData}
           >
-           <p><b>Expiry Date:</b> {data.PTO['Expiry Date']}</p>
+           <p className={isDateOneWeekAway(data.PTO['Expiry Date']) ? 'text-red-700' : ''}><b>Expiry Date:</b> {data.PTO['Expiry Date']}</p>
            </DataCard>
           
          </>
@@ -213,7 +222,7 @@ function handleAddEdit(dataKey) {
             setEdittedValue={setEdittedValue}
             handleEditData={handleEditData}
           >
-           <p><b>Expiry Date:</b> {data.DP['Expiry Date']}</p>
+           <p className={isDateOneWeekAway(data.DP['Expiry Date']) ? 'text-red-700' : ''}><b>Expiry Date:</b> {data.DP['Expiry Date']}</p>
            </DataCard>
            
          </>
@@ -231,7 +240,7 @@ function handleAddEdit(dataKey) {
             setEdittedValue={setEdittedValue}
             handleEditData={handleEditData}
           >
-           <p><b>Next Monitoring Period:</b> {data.SMR['Next Monitoring Period - Date']}</p>
+           <p className={isDateOneWeekAway(data.SMR['Next Monitoring Period - Date']) ? 'text-red-700' : ''}><b>Next Monitoring Period:</b> {data.SMR['Next Monitoring Period - Date']}</p>
            </DataCard>
            <DataCard
             dataKey="Next Monitoring Period - Status"
@@ -283,7 +292,7 @@ function handleAddEdit(dataKey) {
             setEdittedValue={setEdittedValue}
             handleEditData={handleEditData}
           >
-           <p><b>Next Monitoring Period:</b> {data.CMR['Next Monitoring Period - Date']}</p>
+           <p className={isDateOneWeekAway(data.SMR['Next Monitoring Period - Date']) ? 'text-red-700' : ''}><b>Next Monitoring Period:</b> {data.CMR['Next Monitoring Period - Date']}</p>
            </DataCard>
            
            <DataCard

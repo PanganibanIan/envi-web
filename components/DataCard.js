@@ -7,9 +7,8 @@ export default function DataCard(props) {
       return dataKey.includes('Date')
     }
 
-
     return (
-        <div className='p-2 relative sm:p-3 border-2 flex items-stretch border-green-50 border-solid w-full w-[35ch]'>
+        <div className='p-2 relative sm:p-3 border-2 flex items-stretch border-green-50 border-solid w-full w-[40ch]'>
 
             <div className='flex-1 flex'>
                 {!(edit === dataKey) ? <>{children}</> : (
