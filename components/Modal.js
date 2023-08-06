@@ -23,7 +23,10 @@ function Modal(props) {
                 <h2 onClick={()=>{
                     logout()
                     setOpenModal(false)
-                }} className='select-none duration-300 hover:pl-2 cursor-pointer w-[6ch]'>Logout</h2>
+                }} className='select-none duration-300 hover:pl-2 cursor-pointer inline-block'>Logout</h2>
+                
+                <a className='select-none duration-300 hover:pl-2 cursor-pointer inline-block' href="https://opms.emb.gov.ph/accounts/login/">EMB Online Permitting and Monitoring System</a>
+                <a className='select-none duration-300 hover:pl-2 cursor-pointer inline-block' href="https://emb.gov.ph/">DENR EMB</a>
             </div>
         </div>,
         _document.getElementById('portal')

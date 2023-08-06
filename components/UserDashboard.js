@@ -124,6 +124,8 @@ const isDateOneWeekAway = (dateString) => {
 
          </DataCard>
          
+         <a className='w-full max-w-[30ch] border-3 border-blue-500 border-solid bg-darkBG text-white text-center rounded-lg py-2 duration-300 relative hover:scale-105' href='https://emb.gov.ph/status-of-ecc-and-cnc-applications/'>DENR ECC Database</a>
+         
          </>
              
        )}
@@ -173,6 +175,8 @@ const isDateOneWeekAway = (dateString) => {
           >
            <p className={isDateOneWeekAway(data.PTO['Expiry Date']) ? 'text-red-700' : ''}><b>Expiry Date:</b> {data.PTO['Expiry Date']}</p>
            </DataCard>
+           
+           <a className='w-full max-w-[30ch] border-3 border-blue-500 border-solid bg-darkBG text-white text-center rounded-lg py-2 duration-300 relative hover:scale-105' href='https://opms.emb.gov.ph/accounts/login/'>EMB OPMS</a>
           
          </>
        )}
@@ -225,6 +229,8 @@ const isDateOneWeekAway = (dateString) => {
            <p className={isDateOneWeekAway(data.DP['Expiry Date']) ? 'text-red-700' : ''}><b>Expiry Date:</b> {data.DP['Expiry Date']}</p>
            </DataCard>
            
+           <a className='w-full max-w-[30ch] border-3 border-blue-500 border-solid bg-darkBG text-white text-center rounded-lg py-2 duration-300 relative hover:scale-105' href='https://opms.emb.gov.ph/accounts/login/'>EMB OPMS</a>
+           
          </>
        )}
        
@@ -253,6 +259,9 @@ const isDateOneWeekAway = (dateString) => {
            <p><b>Status:</b> {data.SMR['Next Monitoring Period - Status']}</p>
            </DataCard>
            
+           
+           <a className='w-full max-w-[30ch] border-3 border-blue-500 border-solid bg-darkBG text-white rounded-lg uppercase py-2 duration-300 relative hover:scale-105 text-center' href='https://client.emb.gov.ph/smr/login'>Create SMR</a>
+           <p> </p>
            <p> </p>
            <p> </p>
            
@@ -306,6 +315,7 @@ const isDateOneWeekAway = (dateString) => {
            <p><b>Status:</b> {data.CMR['Next Monitoring Period - Status']}</p>
            </DataCard>
            
+           <a className='w-full max-w-[30ch] border-3 border-blue-500 border-solid bg-darkBG text-white rounded-lg uppercase py-2 duration-300 relative hover:scale-105 text-center' href='https://online.emb.gov.ph/cmr/Default.aspx'>Create CMR</a>
            <p> </p>
            <p> </p>
            
